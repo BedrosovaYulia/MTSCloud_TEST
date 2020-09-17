@@ -12,7 +12,8 @@ def Main(rq):
     session = boto3.session.Session()
     s3 = session.client(
         service_name='s3',
-        endpoint_url='https://storage.yandexcloud.net',
+        #endpoint_url='https://storage.yandexcloud.net',
+        endpoint_url='https://s3.rusonyx.ru',
         aws_access_key_id=os.environ['key_id'],
         aws_secret_access_key=os.environ['access_key'],
         )
