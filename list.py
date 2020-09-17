@@ -21,7 +21,7 @@ def Main(rq):
     # Получаем данные
     messagelist = dict()
     
-    for key in s3.list_objects(Bucket=os.environ['bucket'])['Contents']:
+    for key in s3.list_objects(Bucket=os.environ['bucket'], Prefix='data')['Contents']:
         get_object_response = s3.get_object(
             Bucket=os.environ['bucket'], Key=key['Key'])
         messagelist[key['Key']] = json.loads(

@@ -23,7 +23,7 @@ def Main(rq):
     # Загрузить объекты в бакет
 
     ## Из строки
-    s3.put_object(Bucket=os.environ['bucket'], Key=rq['args']['email'], Body=str(
+    s3.put_object(Bucket=os.environ['bucket'], Key='data/'+rq['args']['email'], Body=str(
         json.dumps(rq['args'])))
 
     return rq, None
