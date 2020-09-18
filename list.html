@@ -149,7 +149,6 @@
 
                     $('#GetResultButton').on('click', function (e) {
 
-                        alert('ok');
                         
 
                         $.ajax({
@@ -158,11 +157,16 @@
 
                                 url: 'https://faas-test.cloud.mts.ru/call/upjy6u6MW3UU7RiS5iWCyW0wUWU5mFG59',
 
-                                //dataType: 'json',
+                                dataType: 'json',
 
-                                //data: $('.contactForm').serialize(),
+                                error: function (xhr, status, error) {
+                                    alert(xhr.responseText);
+                                    
+                                },
 
                                 success: function (data) {
+
+                                    alert("success");
     
                                     $.each(data, function (index, element) {
                                         

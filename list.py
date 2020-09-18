@@ -27,4 +27,4 @@ def Main(rq):
         messagelist[key['Key']] = json.loads(
             get_object_response['Body'].read().decode())
 
-    return json.dumps(messagelist), 200
+    return messagelist, None
